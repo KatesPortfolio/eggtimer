@@ -1,0 +1,65 @@
+:root{
+    --header-background: #BFBFBF;
+    --background-color: #D9D9D9;
+    --logo-color: black;
+    --addbutton-color:#FFAA6E;
+    --addbutton-textcolor: #FFF9E3;
+    --startbutton-color: #799851;
+    --endbutton-color: #CC6444;
+    --startendbutton-textcolor: #FFF6C1;
+    --instructions-background: #FFF9E3;
+    --instructions-textcolor: #D38650;
+    --buttons-color: #BFBFBF;
+}
+
+@font-face {
+    font-family: kodchasan-bold;
+    src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
+}
+@font-face {
+    font-family: kodchasan-bold;
+    src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: var(--background-color);
+    
+}
+
+main{
+    width: 500px;
+}
+
+header{
+    height: 60px;
+    background-color: var(--header-background);
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1{
+    font-family: kodchasan-bold;
+    font-size: 18px;
+}
+
+.middle-section{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#information-icon{
+    width: 20px;
+}
+
+#egg-logo{
+    width: 30px;
+    height: 30px;
+}
