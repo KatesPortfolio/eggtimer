@@ -1,65 +1,75 @@
-:root{
-    --header-background: #BFBFBF;
-    --background-color: #D9D9D9;
-    --logo-color: black;
-    --addbutton-color:#FFAA6E;
-    --addbutton-textcolor: #FFF9E3;
-    --startbutton-color: #799851;
-    --endbutton-color: #CC6444;
-    --startendbutton-textcolor: #FFF6C1;
-    --instructions-background: #FFF9E3;
-    --instructions-textcolor: #D38650;
-    --buttons-color: #BFBFBF;
+:root {
+  --header-background: #bfbfbf;
+  --background-color: #d9d9d9;
+  --logo-color: black;
+  --addbutton-color: #ffaa6e;
+  --addbutton-textcolor: #fff9e3;
+  --startbutton-color: #799851;
+  --endbutton-color: #cc6444;
+  --startendbutton-textcolor: #fff6c1;
+  --instructions-background: #fff9e3;
+  --instructions-textcolor: #d38650;
+  --buttons-color: #bfbfbf;
 }
 
 @font-face {
-    font-family: kodchasan-bold;
-    src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
+  font-family: kodchasan-bold;
+  src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
 }
 @font-face {
-    font-family: kodchasan-bold;
-    src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
+  font-family: kodchasan-bold;
+  src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    background-color: var(--background-color);
-    
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background-color: var(--background-color);
+  overflow-y: hidden ;
 }
 
-main{
-    width: 500px;
+main {
+  width: 430px;
 }
 
-header{
-    height: 60px;
-    background-color: var(--header-background);
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    gap: 120px;
-    padding-left: 10px;
-    padding-right: 10px;
+header {
+  height: 60px;
+  background-color: var(--header-background);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 140px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-h1{
-    font-family: kodchasan-bold;
-    font-size: 18px;
+h1 {
+  font-family: kodchasan-bold;
+  font-size: 18px;
 }
 
-.middle-section{
-    display: flex;
-    gap: 5px;
-    align-items: center;
+.middle-section {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-#information-icon{
-    width: 20px;
+#information-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url(./assets/icon/370079_info_information_data_icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-#egg-logo{
-    width: 30px;
-    height: 30px;
+#egg-logo {
+  width: 30px;
+  height: 30px;
 }
