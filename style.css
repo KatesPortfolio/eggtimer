@@ -20,6 +20,11 @@
   font-family: kodchasan-bold;
   src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
 }
+@font-face {
+  font-family: josefin-slab;
+  src: url(./assets/font/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf);
+}
+
 
 body {
   display: flex;
@@ -46,7 +51,7 @@ header {
 
 h1 {
   font-family: kodchasan-bold;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .middle-section {
@@ -73,3 +78,41 @@ h1 {
   width: 30px;
   height: 30px;
 }
+
+/*---------------WELCOME-SPLASH-------------------*/
+
+.welcome-splash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 430px;
+    height: 932px;
+}
+
+.upper-wrapper{
+    display: flex;
+    gap: 5px;
+    justify-content: baseline;
+}
+
+#egg-image-logo{
+    width: 60px;
+    height: 60px;
+}
+
+#egg-logotext-splash{
+    font-family: kodchasan-bold;
+    font-size: 32px;
+    margin-bottom:0;
+}
+
+#sponsored{
+    font-family: josefin-slab;
+    font-size: 14px;
+    width: 130px;
+}
+
+/*-----------------EGG-SELECTION-SECTION--------------------------*/
+
+    
