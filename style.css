@@ -34,12 +34,12 @@ main {
 }
 
 header {
-  height: 60px;
+  height: 80px;
   background-color: var(--header-background);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 140px;
+  gap: 110px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -56,8 +56,8 @@ h1 {
 }
 
 #information-icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-image: url(./assets/icon/370079_info_information_data_icon.png);
   background-position: center;
   background-repeat: no-repeat;
