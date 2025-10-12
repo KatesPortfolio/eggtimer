@@ -19,6 +19,8 @@
 @font-face {
   font-family: kodchasan-bold;
   src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
+  font-family: kodchasan-semibold;
+  src: url(./assets/font/Kodchasan/Kodchasan-SemiBold.ttf);
 }
 @font-face {
   font-family: josefin-slab;
@@ -28,6 +30,9 @@
 @font-face{
     font-family: inter;
     src: url(./assets/font/Inter/Inter-VariableFont_opsz\,wght.ttf);
+@font-face {
+  font-family: inter;
+  src: url(./assets/font/Inter/Inter-VariableFont_opsz\wght.ttf);
 }
 
 body {
@@ -234,6 +239,14 @@ h1 {
     justify-content: center;
     gap: 10px; /* Sätter ett konsekvent 10px mellanrum mellan alla element i sektionen */
     margin-bottom: 10px; 
+.s-section,
+.m-section,
+.l-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Sätter ett konsekvent 10px mellanrum mellan alla element i sektionen */
+  margin-bottom: 10px;
 }
 
 /* Lägg till box-sizing för att säkerställa att bredden inkluderar border/padding */
