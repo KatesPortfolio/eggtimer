@@ -409,19 +409,18 @@ h1 {
     margin-top: 100px;
     margin-bottom: 100px;
     
-    /* Animationen är korrekt applicerad */
+    /* ANVÄNDER: pop-and-fade (försvinner efter pop) */
     animation: pop-and-fade 1.5s ease-out forwards;
 }
 /*------------FINISHED SECTION---------------------*/
-.finished-section{
-    margin-top: 50px;
-}
+
 #final-image{
     width: 400px;
     border-radius: 50%;
     margin-left: 20px;
     border: 2px solid white;
-    /* Förmodligen fel: animation: pop-and-fade 1.5s ease-out forwards; om du bara vill ha den på #price-image */
+    /* ÄNDRAT TILL: pop-and-stay (stannar efter pop) */
+    animation: pop-and-stay 1.5s ease-out forwards;
 }
 #good-job-text{
     margin-top: 40px;
@@ -430,6 +429,7 @@ h1 {
 
 #enjoy-text{
     font-size: 28px;
+    margin-bottom: 50px;
 }
 #good-job-text, #enjoy-text{
     color: var(--instructions-textcolor);
@@ -498,8 +498,32 @@ h1 {
   padding-right: 15px;
 }
 
-/* Keyframes för animationen (fungerar som du ville!) */
+/* Keyframes för pop-up och FADE-OUT */
 @keyframes pop-and-fade {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0; /* Tonar bort */
+  }
+}
+
+/* NYTT: Keyframes för pop-up och STANNAR */
+@keyframes pop-and-stay {
   0% {
     transform: scale(0.1); /* Börja 10% av sin storlek */
     opacity: 0; /* Osynlig */
@@ -508,16 +532,8 @@ h1 {
     transform: scale(1.1); /* Poppa ut lite större än normalt */
     opacity: 1; /* Helt synlig */
   }
-  50% {
-    transform: scale(1); /* Gå tillbaka till normal storlek */
-    opacity: 1;
-  }
-  90% {
-    transform: scale(1); /* Håll den synlig tills 90% av tiden gått */
-    opacity: 1;
-  }
   100% {
-    transform: scale(1);
-    opacity: 0; /* Försvinner snabbt mellan 90% och 100% */
+    transform: scale(1); /* Sätts till normal storlek */
+    opacity: 1; /* Stannar synlig */
   }
 }
