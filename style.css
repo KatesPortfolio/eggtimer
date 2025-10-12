@@ -412,6 +412,30 @@ h1 {
     /* Animationen är korrekt applicerad */
     animation: pop-and-fade 1.5s ease-out forwards;
 }
+/*------------FINISHED SECTION---------------------*/
+.finished-section{
+    margin-top: 50px;
+}
+#final-image{
+    width: 400px;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 2px solid white;
+    /* Förmodligen fel: animation: pop-and-fade 1.5s ease-out forwards; om du bara vill ha den på #price-image */
+}
+#good-job-text{
+    margin-top: 40px;
+    font-size: 32px;
+}
+
+#enjoy-text{
+    font-size: 28px;
+}
+#good-job-text, #enjoy-text{
+    color: var(--instructions-textcolor);
+    font-family: kodchasan-semibold;
+    text-align: center;
+}
 
 /*---------------INFORMATION-SECTION---------------------*/
 
