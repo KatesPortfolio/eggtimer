@@ -142,10 +142,6 @@ h1 {
   cursor: pointer;
 }
 
-.egg-button:hover{
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-}
-
 #small-egg-button {
   width: 90px;
   height: 90px;
@@ -191,11 +187,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-#add-egg-button:hover {
-    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
-    cursor:pointer;
-}
-
 .egg-wrapper div {
   position: relative;
   display: flex;
@@ -229,51 +220,60 @@ h1 {
 
 .egg-selection-container {
   display: block;
-
+  margin-bottom: 20px;
 }
 
 .hidden-section {
   display: none;
 }
 
+/* Uppdaterade stilar för linjering och konsekvent storlek */
 .s-section, .m-section, .l-section{
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
-    gap: 10px;
+    gap: 10px; /* Sätter ett konsekvent 10px mellanrum mellan alla element i sektionen */
+    margin-bottom: 10px; 
+}
+
+/* Lägg till box-sizing för att säkerställa att bredden inkluderar border/padding */
+.number-input, .delete-button {
+    box-sizing: border-box; 
 }
 
 .number-input{
     width: 140px;
     height: 50px;
+    margin-top: 0; /* Ta bort onödig marginal */
     border:3px solid var(--addbutton-color);
     border-radius: 5px;
     font-family: inter;
+    padding-left: 10px;
+    /* Lägg till padding för att placera texten snyggt, men det är redan inkluderat i box-sizing: border-box */
 }
 
 .delete-button{
     background-color: var(--endbutton-color);
     background-image: url(./assets/icon/8155520_close_delete_remove_cancel_trash_icon.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 70%; 
     background-position: center;
-    width: 55px;
-    height: 55px;
+    width: 50px; 
+    height: 50px; 
     opacity: 0.7;
     border: 1px solid var(--addbutton-color);
-    border-radius: 5px;
-    
-}
-
-.delete-button:hover{
-    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+    border-radius: 5px; 
 }
 
 #S, #M, #L{
     font-family: kodchasan-bold;
     font-size: 24px;
+    margin: 0; 
+    
+    /* NYTT: Sätt en fast bredd för S, M, L för att allt ska linjera perfekt oavsett teckenbredd */
+    width: 35px; 
+    text-align: right; /* Valfritt: Linjera texten till höger för att jämna ut avståndet till inputfältet */
 }
 
 
 /*------------timer-section-------------*/
-
