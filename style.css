@@ -403,3 +403,45 @@ h1 {
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
 }
 
+/*---------------INFORMATION-SECTION---------------------*/
+
+.information-section {
+  margin-top: 100px;
+}
+
+.title-information {
+  margin-top: 20px;
+  font-family: kodchasan-bold;
+  text-align: center;
+  font-size: 24px;
+}
+
+.information-text {
+  font-family: kodchasan-semibold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.egg-information {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.egg-info-image {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.egg-text {
+  font-family: kodchasan-semibold;
+  text-align: center;
+  font-size: 18px;
+  color: var(--instructions-textcolor);
+}
+
+.instructions {
+  font-family: kodchasan-semibold;
+  text-align: left;
+  font-size: 18px;
+}
