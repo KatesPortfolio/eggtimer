@@ -35,7 +35,7 @@ body {
   justify-content: center;
   margin: 0;
   background-color: var(--background-color);
-  /* overflow-y: hidden ; */
+  /* overflow-y: hidden; */
 }
 
 main {
@@ -83,8 +83,6 @@ h1 {
   height: 30px;
 }
 
-/*---------------WELCOME-SPLASH-------------------*/
-
 .welcome-splash {
   display: flex;
   justify-content: center;
@@ -117,7 +115,6 @@ h1 {
   width: 130px;
 }
 
-/*-----------------EGG-SELECTION-SECTION--------------------------*/
 .egg-selection-section {
   display: flex;
   flex-direction: column;
@@ -130,11 +127,10 @@ h1 {
   align-items: flex-end;
 }
 
-/* New shared styles for egg buttons */
 .egg-button {
   background-image: url(./assets/image/egg.png);
-  background-color: transparent; /* Remove default button background color */
-  border: none; /* Remove default button border */
+  background-color: transparent;
+  border: none;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -208,7 +204,7 @@ h1 {
 }
 
 #S-size {
-  font-size: 18px; /* justera efter smak */
+  font-size: 18px;
 }
 
 #M-size {
@@ -227,18 +223,16 @@ h1 {
   display: none;
 }
 
-/* Uppdaterade stilar för linjering och konsekvent storlek */
 .s-section,
 .m-section,
 .l-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Sätter ett konsekvent 10px mellanrum mellan alla element i sektionen */
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-/* Lägg till box-sizing för att säkerställa att bredden inkluderar border/padding */
 .number-input,
 .delete-button {
   box-sizing: border-box;
@@ -247,7 +241,7 @@ h1 {
 .number-input {
   width: 140px;
   height: 50px;
-  margin-top: 0; /* Ta bort onödig marginal */
+  margin-top: 0;
   border: 3px solid var(--addbutton-color);
   border-radius: 5px;
   font-family: inter;
@@ -273,13 +267,9 @@ h1 {
   font-family: kodchasan-bold;
   font-size: 24px;
   margin: 0;
-
-  /* NYTT: Sätt en fast bredd för S, M, L för att allt ska linjera perfekt oavsett teckenbredd */
   width: 35px;
-  text-align: right; /* Valfritt: Linjera texten till höger för att jämna ut avståndet till inputfältet */
+  text-align: right;
 }
-
-/*------------timer-section-------------*/
 
 .timer-section {
   margin-top: 50px;
@@ -353,8 +343,6 @@ h1 {
   height: 60px;
 }
 
-/*---------------------finished-popup------------------*/
-
 .finished-popup {
   display: flex;
   flex-direction: column;
@@ -402,42 +390,37 @@ h1 {
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
 }
 
-/*--------------PRICE-SECTION-------------------*/
-#price-image{
-    width: 300px;
-    margin-left: 80px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    
-    /* ANVÄNDER: pop-and-fade (försvinner efter pop) */
-    animation: pop-and-fade 1.5s ease-out forwards;
-}
-/*------------FINISHED SECTION---------------------*/
+#price-image {
+  width: 300px;
+  margin-left: 80px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 
-#final-image{
-    width: 400px;
-    border-radius: 50%;
-    margin-left: 20px;
-    border: 2px solid white;
-    /* ÄNDRAT TILL: pop-and-stay (stannar efter pop) */
-    animation: pop-and-stay 1.5s ease-out forwards;
-}
-#good-job-text{
-    margin-top: 40px;
-    font-size: 32px;
+  animation: pop-and-fade 1.5s ease-out forwards;
 }
 
-#enjoy-text{
-    font-size: 28px;
-    margin-bottom: 50px;
+#final-image {
+  width: 400px;
+  border-radius: 50%;
+  margin-left: 20px;
+  border: 2px solid white;
+  animation: pop-and-stay 1.5s ease-out forwards;
 }
-#good-job-text, #enjoy-text{
-    color: var(--instructions-textcolor);
-    font-family: kodchasan-semibold;
-    text-align: center;
+#good-job-text {
+  margin-top: 40px;
+  font-size: 32px;
 }
 
-/*---------------INFORMATION-SECTION---------------------*/
+#enjoy-text {
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+#good-job-text,
+#enjoy-text {
+  color: var(--instructions-textcolor);
+  font-family: kodchasan-semibold;
+  text-align: center;
+}
 
 .information-section {
   margin-top: 100px;
@@ -453,52 +436,65 @@ h1 {
   opacity: 0.8;
 }
 
-.information-egg-section, .information-text{
-    padding-left: 15px;
-    padding-right: 15px;
+.instructions-wrapper {
+  margin-top: 20px;
+  padding-top: 10px;
 }
+
+.information-wrapper .information-egg-section,
+.information-wrapper .information-text,
+.instructions-wrapper .instructions {
+  margin-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.information-egg-section,
+.information-text {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .title-information {
   margin: 10px;
   font-family: kodchasan-semibold;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
 .information-text {
   font-family: kodchasan-semibold;
   text-align: center;
-  font-size: 18px;
-  
+  font-size: 16px;
 }
 
 .egg-information {
   display: flex;
-  gap: 10px;
-  
+  justify-content: center;
+  align-items: center;
 }
 
 .egg-info-image {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .egg-text {
   font-family: kodchasan-semibold;
-  text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--instructions-textcolor);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .instructions {
   font-family: kodchasan-semibold;
   text-align: left;
-  font-size: 18px;
-  padding-left: 15px;
-  padding-right: 15px;
+  font-size: 16px;
 }
 
-/* Keyframes för pop-up och FADE-OUT */
 @keyframes pop-and-fade {
   0% {
     transform: scale(0.1);
@@ -518,22 +514,21 @@ h1 {
   }
   100% {
     transform: scale(1);
-    opacity: 0; /* Tonar bort */
+    opacity: 0;
   }
 }
 
-/* NYTT: Keyframes för pop-up och STANNAR */
 @keyframes pop-and-stay {
   0% {
-    transform: scale(0.1); /* Börja 10% av sin storlek */
-    opacity: 0; /* Osynlig */
+    transform: scale(0.1);
+    opacity: 0;
   }
   30% {
-    transform: scale(1.1); /* Poppa ut lite större än normalt */
-    opacity: 1; /* Helt synlig */
+    transform: scale(1.1);
+    opacity: 1;
   }
   100% {
-    transform: scale(1); /* Sätts till normal storlek */
-    opacity: 1; /* Stannar synlig */
+    transform: scale(1);
+    opacity: 1;
   }
 }
