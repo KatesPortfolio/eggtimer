@@ -103,6 +103,8 @@ h1 {
 #egg-image-logo {
   width: 60px;
   height: 60px;
+  
+  /* BORTTAGET: animation: pop-and-fade 1.5s ease-out forwards; */
 }
 
 #egg-logotext-splash {
@@ -252,7 +254,6 @@ h1 {
   border-radius: 5px;
   font-family: inter;
   padding-left: 10px;
-  /* Lägg till padding för att placera texten snyggt, men det är redan inkluderat i box-sizing: border-box */
 }
 
 .delete-button {
@@ -403,34 +404,62 @@ h1 {
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
 }
 
+/*------------FINISHED SECTION---------------------*/
+
+#price-image{
+    width: 300px;
+    margin-left: 80px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+    /* NYTT: Applicerar animationen här */
+    animation: pop-and-fade 1.5s ease-out forwards;
+}
+
 /*---------------INFORMATION-SECTION---------------------*/
 
 .information-section {
   margin-top: 100px;
+  background-color: var(--instructions-background);
+  padding: 20px;
+  border-radius: 10px;
+
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.8;
 }
 
+.information-egg-section, .information-text{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .title-information {
-  margin-top: 20px;
-  font-family: kodchasan-bold;
+  margin: 10px;
+  font-family: kodchasan-semibold;
   text-align: center;
   font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .information-text {
   font-family: kodchasan-semibold;
   text-align: center;
   font-size: 18px;
+  
 }
 
 .egg-information {
   display: flex;
-  margin-bottom: 20px;
+  gap: 10px;
+  
 }
 
 .egg-info-image {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .egg-text {
@@ -444,4 +473,30 @@ h1 {
   font-family: kodchasan-semibold;
   text-align: left;
   font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Keyframes för animationen */
+@keyframes pop-and-fade {
+  0% {
+    transform: scale(0.1); /* Börja 10% av sin storlek */
+    opacity: 0; /* Osynlig */
+  }
+  30% {
+    transform: scale(1.1); /* Poppa ut lite större än normalt */
+    opacity: 1; /* Helt synlig */
+  }
+  50% {
+    transform: scale(1); /* Gå tillbaka till normal storlek */
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1); /* Behåll storlek och position */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0; /* Försvinn helt */
+  }
 }
