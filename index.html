@@ -1,120 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>PROTÉINITY</title>
-    <link rel="icon" type="image/x-icon" href="./assets/image/egg.png">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="./assets/image/egg.png" />
+  </head>
+  <body>
     <main>
-        <header>
-            <div class="middle-section">
-                <img id="egg-logo" src="./assets/image/egg.png">
-                <h1>PROTÉINITY</h1>
-            </div>
-            <div class="right-section">
-                <button id="information-icon"></button>
-            </div>
-        </header>
-        <div class="welcome-splash ">
-            <div class="upper-wrapper">
-                <img id="egg-image-logo" src="./assets/image/egg.png">
-                <h2 id="egg-logotext-splash">PROTÉINITY</h2>
-            </div>
-            <div class="down wrapper">
-                <p id="sponsored">SPONSORED BY GYMGROSSISTEN</p>
-            </div>
+      <header>
+        <div class="middle-section">
+          <img id="egg-logo" src="./assets/image/egg.png" />
+          <h1>PROTÉINITY</h1>
         </div>
-        <div class="egg-selection-section hidden-section">
-            <h1 id="choose-egg-size-text">Välj äggstorlek</h1>
-            <div class="egg-wrapper">
-                <div class="first-div">
-                    <p id="S-size">S</p>
-                    <button id="small-egg-button" class="egg-button"></button>
-                </div>
-                <div class="second-div">
-                    <p id="M-size">M</p>
-                    <button id="medium-egg-button" class="egg-button"></button>
-                </div>
-                <div class="third-div">
-                    <p id="L-size">L</p>
-                    <button id="large-egg-button" class="egg-button"></button>
-                </div>
-            </div>
-            <button id="add-egg-button">Lägg till</button>
-            <div class="egg-selection-container">
-                <div class="s-section">
-                    <p id="S">S:</p>
-                    <input type="text" class="number-input" placeholder="ANTAL ÄGG">
-                    <button class="delete-button"></button>
-                </div>
-                <div class="m-section">
-                    <p id="M">M:</p>
-                    <input type="text" class="number-input" placeholder="ANTAL ÄGG">
-                    <button class="delete-button"></button>
-                </div>
-                <div class="l-section">
-                    <p id="L">L:</p>
-                    <input type="text" class="number-input" placeholder="ANTAL ÄGG">
-                    <button class="delete-button"></button>
-                </div>
-            </div>
-            <button id="next-button"></button>
+        <div class="right-section">
+          <button id="information-icon"></button>
         </div>
-        <div class="timer-section">
-            <div class="egg-picture">
-                <img id="egg-picture-one" src="./assets/image/egg.png">
-                <img id="egg-picture-big" src="./assets/image/egg.png">
-                <img id="egg-picture-two" src="./assets/image/egg.png">
-            </div>
-            <p id="timer">TIMER</p>
-            <input type="text" id="timer-input" placeholder="LÄGG IN TID">
-            <button id="start-button">Start</button>
+      </header>
+      <div class="welcome-splash">
+        <div class="upper-wrapper">
+          <img id="egg-image-logo" src="./assets/image/egg.png" />
+          <h2 id="egg-logotext-splash">PROTÉINITY</h2>
         </div>
-        <div class="finished-popup">
-            <div class="egg-picture">
-                <img id="egg-picture-one" src="./assets/image/egg.png">
-                <img id="egg-picture-big" src="./assets/image/egg.png">
-                <img id="egg-picture-two" src="./assets/image/egg.png">
-            </div>
-            <p id="protein-text">PROTEIN: <span id="protein-amount"></span></p>
-            <div id="timer-time"></div>
-            <button id="cancel-button">Avsluta</button>
+        <div class="down wrapper">
+          <p id="sponsored">SPONSORED BY GYMGROSSISTEN</p>
         </div>
-        <div class="finished-section">
-
+      </div>
+      <div class="egg-selection-section hidden-section">
+        <h1 id="choose-egg-size-text">Välj äggstorlek</h1>
+        <div class="egg-wrapper">
+          <div class="first-div">
+            <p id="S-size">S</p>
+            <button id="small-egg-button" class="egg-button"></button>
+          </div>
+          <div class="second-div">
+            <p id="M-size">M</p>
+            <button id="medium-egg-button" class="egg-button"></button>
+          </div>
+          <div class="third-div">
+            <p id="L-size">L</p>
+            <button id="large-egg-button" class="egg-button"></button>
+          </div>
         </div>
-        <div class="information-section">
-            <h3 class="title-information">Information</h3>
-            <p class="information-text" >Proteininnehållet i ett ägg varierar beroende på dess storlek. <br>
-              Här kan du se hur många gram protein varje innehåller:</p>
-<div class="information-egg-section">
-    <div class="egg-information">
-        <img class="egg-info-image"  src="./assets/image/egg.png">
-        <p class="egg-text">Small (S) : 53 g har 6 g protein</p>
-    </div>
-    <div class="egg-information">
-        <img class="egg-info-image"src="./assets/image/egg.png">
-        <p class="egg-text">Medium (M) : 63 g har 7 g protein</p>
-    </div>
-    <div class="egg-information">
-        <img class="egg-info-image" src="./assets/image/egg.png">
-        <p class="egg-text" >Large (L) : 73 g har 8,5 g protein</p>
-    </div>
-</div>
-            <h3 class="title-information">Instruktioner</h3>
-            <p class="instructions">-Börja med att koka upp vatten i en kastrull</p>
-            <p class="instructions">-Lägg försiktigt ner äggen med hjälp av en sked i det kokandet vattnet.</p>
-            <p class="instructions">-Observera: För bästa resultat 
-bör äggen läggas i kastrullen först
-när vattnet har börjat koka, 
-eftersom ett tidigare 
-tillsättande kan påverka resultatet.</p>
-
-
+        <button id="add-egg-button">Lägg till</button>
+        <div class="egg-selection-container">
+          <div class="s-section">
+            <p id="S">S:</p>
+            <input type="text" class="number-input" placeholder="ANTAL ÄGG" />
+            <button class="delete-button"></button>
+          </div>
+          <div class="m-section">
+            <p id="M">M:</p>
+            <input type="text" class="number-input" placeholder="ANTAL ÄGG" />
+            <button class="delete-button"></button>
+          </div>
+          <div class="l-section">
+            <p id="L">L:</p>
+            <input type="text" class="number-input" placeholder="ANTAL ÄGG" />
+            <button class="delete-button"></button>
+          </div>
         </div>
-    </body>
+        <button id="next-button"></button>
+      </div>
+      <div class="timer-section">
+        <div class="egg-picture">
+          <img id="egg-picture-one" src="./assets/image/egg.png" />
+          <img id="egg-picture-big" src="./assets/image/egg.png" />
+          <img id="egg-picture-two" src="./assets/image/egg.png" />
+        </div>
+        <p id="timer">TIMER</p>
+        <input type="text" id="timer-input" placeholder="LÄGG IN TID" />
+        <button id="start-button">Start</button>
+      </div>
+      <div class="finished-popup">
+        <div class="egg-picture">
+          <img id="egg-picture-one" src="./assets/image/egg.png" />
+          <img id="egg-picture-big" src="./assets/image/egg.png" />
+          <img id="egg-picture-two" src="./assets/image/egg.png" />
+        </div>
+        <p id="protein-text">PROTEIN: <span id="protein-amount"></span></p>
+        <div id="timer-time"></div>
+        <button id="cancel-button">Avsluta</button>
+      </div>
+      <div class="finished-section">
+        <img id="price-image" src="./assets/image/186270_verified_quality_award_guaranteed_guarantee_icon.png">
+      </div>
+      <div class="information-section">
+        <h3 class="title-information">INFORMATION</h3>
+        <p class="information-text">
+          Proteininnehållet i ett ägg varierar beroende på dess storlek. <br />
+          Här kan du se hur många gram protein varje innehåller:
+        </p>
+        <div class="information-egg-section">
+          <div class="egg-information">
+            <img class="egg-info-image" src="./assets/image/egg.png" />
+            <p class="egg-text">Small (S) : 53 g har 6 g protein</p>
+          </div>
+          <div class="egg-information">
+            <img class="egg-info-image" src="./assets/image/egg.png" />
+            <p class="egg-text">Medium (M) : 63 g har 7 g protein</p>
+          </div>
+          <div class="egg-information">
+            <img class="egg-info-image" src="./assets/image/egg.png" />
+            <p class="egg-text">Large (L) : 73 g har 8,5 g protein</p>
+          </div>
+        </div>
+        <h3 class="title-information">INSTRUKTIONER</h3>
+        <p class="instructions">~ Börja med att koka upp vatten i en kastrull</p>
+        <p class="instructions">
+          ~ Lägg försiktigt ner äggen med hjälp av en sked i det kokandet
+          vattnet.
+        </p>
+        <p class="instructions">
+          ~ Observera: För bästa resultat bör äggen läggas i kastrullen först när
+          vattnet har börjat koka, eftersom ett tidigare tillsättande kan
+          påverka resultatet.
+        </p>
+      </div>
     </main>
+  </body>
 </html>
