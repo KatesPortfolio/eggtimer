@@ -103,8 +103,6 @@ h1 {
 #egg-image-logo {
   width: 60px;
   height: 60px;
-  
-  /* BORTTAGET: animation: pop-and-fade 1.5s ease-out forwards; */
 }
 
 #egg-logotext-splash {
@@ -404,15 +402,14 @@ h1 {
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
 }
 
-/*------------FINISHED SECTION---------------------*/
-
+/*--------------PRICE-SECTION-------------------*/
 #price-image{
     width: 300px;
     margin-left: 80px;
     margin-top: 100px;
     margin-bottom: 100px;
     
-    /* NYTT: Applicerar animationen här */
+    /* Animationen är korrekt applicerad */
     animation: pop-and-fade 1.5s ease-out forwards;
 }
 
@@ -477,7 +474,7 @@ h1 {
   padding-right: 15px;
 }
 
-/* Keyframes för animationen */
+/* Keyframes för animationen (fungerar som du ville!) */
 @keyframes pop-and-fade {
   0% {
     transform: scale(0.1); /* Börja 10% av sin storlek */
@@ -492,11 +489,11 @@ h1 {
     opacity: 1;
   }
   90% {
-    transform: scale(1); /* Behåll storlek och position */
+    transform: scale(1); /* Håll den synlig tills 90% av tiden gått */
     opacity: 1;
   }
   100% {
     transform: scale(1);
-    opacity: 0; /* Försvinn helt */
+    opacity: 0; /* Försvinner snabbt mellan 90% och 100% */
   }
 }
