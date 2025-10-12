@@ -25,6 +25,10 @@
   src: url(./assets/font/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf);
 }
 
+@font-face{
+    font-family: inter;
+    src: url(./assets/font/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
 
 body {
   display: flex;
@@ -81,92 +85,195 @@ h1 {
 
 /*---------------WELCOME-SPLASH-------------------*/
 
-.welcome-splash{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 430px;
-    height: 932px;
+.welcome-splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 430px;
+  height: 932px;
 }
 
-.upper-wrapper{
-    display: flex;
-    gap: 5px;
-    justify-content: baseline;
+.upper-wrapper {
+  display: flex;
+  gap: 5px;
+  justify-content: baseline;
 }
 
-#egg-image-logo{
-    width: 60px;
-    height: 60px;
+#egg-image-logo {
+  width: 60px;
+  height: 60px;
 }
 
-#egg-logotext-splash{
-    font-family: kodchasan-bold;
-    font-size: 32px;
-    margin-bottom:0;
+#egg-logotext-splash {
+  font-family: kodchasan-bold;
+  font-size: 32px;
+  margin-bottom: 0;
 }
 
-#sponsored{
-    font-family: josefin-slab;
-    font-size: 14px;
-    width: 130px;
+#sponsored {
+  font-family: josefin-slab;
+  font-size: 14px;
+  width: 130px;
 }
 
 /*-----------------EGG-SELECTION-SECTION--------------------------*/
-.egg-selection-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap:20px;
+.egg-selection-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
-.egg-wrapper{
+.egg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* New shared styles for egg buttons */
+.egg-button {
+  background-image: url(./assets/image/egg.png);
+  background-color: transparent; /* Remove default button background color */
+  border: none; /* Remove default button border */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+  cursor: pointer;
+}
+
+.egg-button:hover{
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+#small-egg-button {
+  width: 90px;
+  height: 90px;
+}
+#medium-egg-button {
+  width: 110px;
+  height: 110px;
+}
+#large-egg-button {
+  width: 130px;
+  height: 130px;
+}
+
+#next-button {
+  background-image: url(./assets/icon/1814086_arrow_forward_next_right_icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 85px;
+  height: 50px;
+  background-color: var(--buttons-color);
+  border: none;
+  border-radius: 10px;
+  margin-left: 300px;
+}
+
+#choose-egg-size-text {
+  margin: 40px;
+}
+
+#add-egg-button {
+  background-color: var(--addbutton-color);
+  color: var(--addbutton-textcolor);
+  font-family: kodchasan-bold;
+  font-size: 18px;
+  width: 180px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#add-egg-button:hover {
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+    cursor:pointer;
+}
+
+.egg-wrapper div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#S-size,
+#M-size,
+#L-size {
+  position: absolute;
+  color: var(--addbutton-textcolor);
+  font-family: kodchasan-bold;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#S-size {
+  font-size: 18px; /* justera efter smak */
+}
+
+#M-size {
+  font-size: 20px;
+}
+#L-size {
+  font-size: 22px;
+}
+
+.egg-selection-container {
+  display: block;
+
+}
+
+.hidden-section {
+  display: none;
+}
+
+.s-section, .m-section, .l-section{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-
-#small-egg-picture{
-    width: 80px;
-    height: 80px;
-}
-#medium-egg-picture{
-    width: 100px;
-    height: 100px;
-}
-#large-egg-picture{
-    width: 120px;
-    height: 120px;
+.number-input{
+    width: 140px;
+    height: 50px;
+    border:3px solid var(--addbutton-color);
+    border-radius: 5px;
+    font-family: inter;
 }
 
-#next-button{
-    background-image: url(./assets/icon/1814086_arrow_forward_next_right_icon.png);
+.delete-button{
+    background-color: var(--endbutton-color);
+    background-image: url(./assets/icon/8155520_close_delete_remove_cancel_trash_icon.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 85px;
-    height: 50px;
-    background-color: var(--buttons-color);
-    border: none;
-    border-radius: 10px;
-    margin-left: 300px;
-}
-
-#choose-egg-size-text{
-    margin: 40px;
-}
-
-#add-egg-button{
-    background-color: var(--addbutton-color);
-    color: var(--addbutton-textcolor);
-    font-family: kodchasan-bold;
-    font-size: 18px;
-    width: 180px;
+    width: 55px;
     height: 55px;
-    text-align: center;
-    border: none;
-    border-radius: 50px;
-    margin-left: 100px;
-    margin-top: 20px;
+    opacity: 0.7;
+    border: 1px solid var(--addbutton-color);
+    border-radius: 5px;
+    
 }
+
+.delete-button:hover{
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+}
+
+#S, #M, #L{
+    font-family: kodchasan-bold;
+    font-size: 24px;
+}
+
+
+/*------------timer-section-------------*/
+
