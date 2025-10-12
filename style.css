@@ -17,8 +17,6 @@
   src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
 }
 @font-face {
-  font-family: kodchasan-bold;
-  src: url(./assets/font/Kodchasan/Kodchasan-Bold.ttf);
   font-family: kodchasan-semibold;
   src: url(./assets/font/Kodchasan/Kodchasan-SemiBold.ttf);
 }
@@ -27,9 +25,6 @@
   src: url(./assets/font/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf);
 }
 
-@font-face{
-    font-family: inter;
-    src: url(./assets/font/Inter/Inter-VariableFont_opsz\,wght.ttf);
 @font-face {
   font-family: inter;
   src: url(./assets/font/Inter/Inter-VariableFont_opsz\wght.ttf);
@@ -233,12 +228,6 @@ h1 {
 }
 
 /* Uppdaterade stilar för linjering och konsekvent storlek */
-.s-section, .m-section, .l-section{
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    gap: 10px; /* Sätter ett konsekvent 10px mellanrum mellan alla element i sektionen */
-    margin-bottom: 10px; 
 .s-section,
 .m-section,
 .l-section {
@@ -250,43 +239,79 @@ h1 {
 }
 
 /* Lägg till box-sizing för att säkerställa att bredden inkluderar border/padding */
-.number-input, .delete-button {
-    box-sizing: border-box; 
 }
-
-.number-input{
-    width: 140px;
-    height: 50px;
-    margin-top: 0; /* Ta bort onödig marginal */
-    border:3px solid var(--addbutton-color);
-    border-radius: 5px;
-    font-family: inter;
-    padding-left: 10px;
-    /* Lägg till padding för att placera texten snyggt, men det är redan inkluderat i box-sizing: border-box */
-}
-
-.delete-button{
-    background-color: var(--endbutton-color);
-    background-image: url(./assets/icon/8155520_close_delete_remove_cancel_trash_icon.png);
-    background-repeat: no-repeat;
-    background-size: 70%; 
-    background-position: center;
-    width: 50px; 
-    height: 50px; 
-    opacity: 0.7;
-    border: 1px solid var(--addbutton-color);
-    border-radius: 5px; 
-}
-
-#S, #M, #L{
-    font-family: kodchasan-bold;
-    font-size: 24px;
-    margin: 0; 
-    
-    /* NYTT: Sätt en fast bredd för S, M, L för att allt ska linjera perfekt oavsett teckenbredd */
-    width: 35px; 
-    text-align: right; /* Valfritt: Linjera texten till höger för att jämna ut avståndet till inputfältet */
-}
-
 
 /*------------timer-section-------------*/
+
+.timer-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.egg-picture {
+  display: flex;
+  position: relative;
+}
+
+#egg-picture-one,
+#egg-picture-two {
+  width: 100px;
+  height: 100px;
+}
+
+#egg-picture-one {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+#egg-picture-two {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+}
+
+#egg-picture-big {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 140px;
+  right: 140px;
+  z-index: 3;
+}
+
+#timer {
+  margin-top: 200px;
+  font-size: inter;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+#timer-input {
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+  border: 3px solid var(--addbutton-color);
+  border-radius: 5px;
+  margin-left: 80px;
+  margin-bottom: 60px;
+  background-color: var(--background-color);
+  opacity: 0.7;
+}
+
+#start-button {
+  font-size: 24px;
+  font-family: inter;
+  border-radius: 50px;
+  background-color: var(--startbutton-color);
+  color: var(--startendbutton-textcolor);
+  margin-left: 120px;
+  margin-bottom: 20px;
+  border: none;
+
+  width: 180px;
+  height: 60px;
+}
+
