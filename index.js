@@ -27,3 +27,9 @@ nextButton.addEventListener("click", function () {
   showSection("header-id")
   showSection("setTimer-id");
 });
+
+startButton.addEventListener("click", function () {
+  hideAll("setTimer-id");
+  showSection("header-id")
+  showSection("timer-id");
+});
