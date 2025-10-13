@@ -15,3 +15,15 @@ function hideAll() {
     }
   }
 }
+
+function showSection(sectionId) {
+  const section = document.getElementById(sectionId);
+
+  section.classList.remove("hidden");
+}
+
+nextButton.addEventListener("click", function () {
+  hideAll("egg-selection-section");
+  showSection("header-id")
+  showSection("setTimer-id");
+});
