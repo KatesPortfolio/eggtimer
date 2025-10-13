@@ -31,34 +31,34 @@
         <h1 id="choose-egg-size-text">Välj äggstorlek</h1>
         <div class="egg-wrapper">
           <div class="first-div">
-            <p class="egg" id="S-size">S</p>
+            <p id="S-size">S</p>
             <button id="small-egg-button" class="egg-button"></button>
           </div>
           <div class="second-div">
-            <p class="egg"  id="M-size">M</p>
+            <p id="M-size">M</p>
             <button id="medium-egg-button" class="egg-button"></button>
           </div>
           <div class="third-div">
-            <p class="egg"  id="L-size">L</p>
+            <p id="L-size">L</p>
             <button id="large-egg-button" class="egg-button"></button>
           </div>
         </div>
-        <button id=>Lägg till</button>
+        <button id="add-egg-button">Lägg till</button>
         <div class="egg-selection-container">
-          <div class="s-section">
+          <div id="s-div" class="s-section element">
             <p id="S">S:</p>
-            <input type="text" class="number-input" placeholder="ANTAL ÄGG" />
-            <button class="delete-button"></button>
+            <input type="text" class="number-input" id="input-number-s" placeholder="ANTAL ÄGG" />
+            <button id="s-delete"  class="delete-button"></button>
           </div>
-          <div class="m-section">
+          <div id="m-div"  class="m-section element">
             <p id="M">M:</p>
-            <input type="text" class="number-input" placeholder="ANTAL ÄGG" />
-            <button class="delete-button"></button>
+            <input type="text" class="number-input" id="input-number-m"  placeholder="ANTAL ÄGG" />
+            <button id="m-delete"  class="delete-button"></button>
           </div>
-          <div class="l-section">
+          <div id="l-div" class="l-section element">
             <p id="L">L:</p>
-            <input type="text" class="number-input" placeholder="ANTAL ÄGG" />
-            <button class="delete-button"></button>
+            <input type="text" class="number-input" id="input-number-l"  placeholder="ANTAL ÄGG" />
+            <button id="l-delete"  class="delete-button"></button>
           </div>
         </div>
         <button id="next-button"></button>
@@ -72,6 +72,8 @@
         <p id="timer">TIMER</p>
         <input type="text" id="timer-input" placeholder="LÄGG IN TID" />
         <button id="start-button">Start</button>
+        <button id="back-button"></button>
+
       </div>
       <div class="section finished-popup" id="timer-id">
         <div class="egg-picture">
