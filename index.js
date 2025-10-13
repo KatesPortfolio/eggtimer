@@ -8,6 +8,17 @@ const startButton = document.getElementById("start-button");
 const addEggButton = document.getElementById("add-egg-button");
 
 
+window.addEventListener("load", function () {
+  hideAll();
+
+  showSection("welcome-splash");
+  setTimeout(() => {
+    hideAll();
+    showSection("egg-selection-section");
+    showSection("header-id");
+  }, 1500);
+});
+
 function hideAll() {
   for (let section of sections) {
     if (!section.classList.contains("hidden")) {
