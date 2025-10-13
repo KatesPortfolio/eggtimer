@@ -8,3 +8,10 @@ const startButton = document.getElementById("start-button");
 const addEggButton = document.getElementById("add-egg-button");
 
 
+function hideAll() {
+  for (let section of sections) {
+    if (!section.classList.contains("hidden")) {
+      section.classList.add("hidden");
+    }
+  }
+}
