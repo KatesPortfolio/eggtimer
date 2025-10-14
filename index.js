@@ -5,17 +5,23 @@ const smallEggBtn = document.getElementById("small-egg-button");
 const mediumEggBtn = document.getElementById("medium-egg-button");
 const largeEggBtn = document.getElementById("large-egg-button");
 const nextButton = document.getElementById("next-button");
-const backButton = document.getElementById("back-button")
+const backButton = document.getElementById("back-button");
 const startButton = document.getElementById("start-button");
 const addEggButton = document.getElementById("add-egg-button");
-const eggContainer = document.querySelectorAll(".egg-selection-container");
+const cancelButton = document.getElementById("cancel-button");
 const deleteButton = document.querySelectorAll(".delete-button");
+const eggContainer = document.querySelectorAll(".egg-selection-container");
 const sInput = document.getElementById("input-number-s");
 const mInput = document.getElementById("input-number-m");
 const lInput = document.getElementById("input-number-l");
 const sDeleteButton = document.getElementById("s-delete");
 const mDeleteButton = document.getElementById("m-delete");
 const lDeleteButton = document.getElementById("l-delete");
+const timerTime = document.getElementById("timer-time");
+const timerInput = document.getElementById("timer-input");
+const proteinAmount= document.getElementById("protein-amount");
+
+// nextButton.disabled = true;
 
 let selectedEgg = null;
 let sEggs = 0;
@@ -30,6 +36,7 @@ window.addEventListener("load", function () {
     hideAll();
     showSection("egg-selection-section");
     showSection("header-id");
+    // hideElement("popup-container");
     hideElement("s-div");
     hideElement("m-div");
     hideElement("l-div");
@@ -64,21 +71,30 @@ function showElement(elementId) {
 }
 
 nextButton.addEventListener("click", function () {
-  if(!sEggs && !mEggs && !lEggs){
-    
-  }
+  // // Hämta värden från inputfälten
+  // const sVal = parseInt(sInput.value) || 0;
+  // const mVal = parseInt(mInput.value) || 0;
+  // const lVal = parseInt(lInput.value) || 0;
 
+  // // Om alla tre är 0 eller tomma => visa popup
+  // if (sVal === 0 && mVal === 0 && lVal === 0) {
+  //   nextButton.disabled = true;
+  //   showElement("popup-container");
+  // } else {
+  //   // Annars, gå vidare till nästa sida
+  //   nextButton.disabled = false;
+  //   hideElement("popup-container");
 
-  hideAll("egg-selection-section");
+  hideAll();
   showSection("header-id");
   showSection("setTimer-id");
 });
 
-backButton.addEventListener("click", function (){
+backButton.addEventListener("click", function () {
   hideAll("setTimer-id");
   showSection("header-id");
-  showSection("egg-selection-section")
-})
+  showSection("egg-selection-section");
+});
 
 startButton.addEventListener("click", function () {
   hideAll("setTimer-id");
@@ -176,3 +192,42 @@ lInput.addEventListener("input", function () {
   localStorage.setItem("lEggs", lInput.value);
 });
 
+let timerId;
+
+startButton.addEventListener("click", function () {
+  const totalLarge = calculateLargeEgg();
+  const totalMedium = calculateMediumEgg();
+  const totalSmall = calculateSmallEgg();
+
+  let totalsum = totalSmall + totalMedium + totalLarge;
+
+  proteinAmount.textContent = `${totalsum} g`;
+
+  
+
+  let ms = 1000;
+  let duration = Number(timerInput.value) * 60;
+  timerId = setInterval(function () {
+    if (duration <= 0) {
+      clearInterval(timerId);
+    }
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    timerTime.textContent = `${minutes} : ${seconds}`;
+    duration = duration - 1;
+
+    if (duration < 0) {
+      hideAll();
+      showSection("price-side");
+      showSection("header-id");
+      return
+    }
+  }, ms);
+});
+
+cancelButton.addEventListener("click", function () {
+  clearInterval(timerId);
+  hideAll();
+  showSection("header-id")
+  showSection("setTimer-id")
+});

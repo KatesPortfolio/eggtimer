@@ -44,6 +44,10 @@
           </div>
         </div>
         <button id="add-egg-button">Lägg till</button>
+        <div id="popup-container" class="element"> 
+          <p id="addText">Lägg till ett ägg</p>
+          <button id="close-button-popup">Stäng</button>
+        </div>
         <div class="egg-selection-container">
           <div id="s-div" class="s-section element">
             <p id="S">S:</p>
@@ -85,13 +89,13 @@
         <div id="timer-time"></div>
         <button id="cancel-button">Avsluta</button>
       </div>
-      <div class="section price-section">
+      <div class="section price-section" id="price-side">
         <img
           id="price-image"
           src="./assets/image/186270_verified_quality_award_guaranteed_guarantee_icon.png"
         />
       </div>
-      <div class="section finished-section">
+      <div class="section finished-section" id="finished-section">
         <img
           id="final-image"
           src="./assets/image/ChatGPT Image 11 okt. 2025 13_21_51.png"
@@ -140,6 +144,7 @@
             ~ Lägg äggen i kallt vatten direkt efter kokning.
           </p>
         </div>
+        <button id="close"></button>
       </div>
     </main>
     <script src="index.js"></script>
