@@ -19,9 +19,10 @@ const mDeleteButton = document.getElementById("m-delete");
 const lDeleteButton = document.getElementById("l-delete");
 const timerTime = document.getElementById("timer-time");
 const timerInput = document.getElementById("timer-input");
-const proteinAmount= document.getElementById("protein-amount");
-
-// nextButton.disabled = true;
+const proteinAmount = document.getElementById("protein-amount");
+const infoButton = document.getElementById("information-icon");
+const informationS = document.getElementById("information-section");
+let currentPage;
 
 let selectedEgg = null;
 let sEggs = 0;
@@ -35,11 +36,9 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     hideAll();
     showSection("egg-selection-section");
+    currentPage = "egg-selection-section";
     showSection("header-id");
-    // hideElement("popup-container");
-    hideElement("s-div");
-    hideElement("m-div");
-    hideElement("l-div");
+    hideElement();
   }, 1500);
 });
 
@@ -48,6 +47,13 @@ function hideAll() {
     if (!section.classList.contains("hidden")) {
       section.classList.add("hidden");
     }
+  }
+}
+
+function hideInputField(id) {
+  const element = document.getElementById(id);
+  if (!element.classList.contains("hidden")) {
+    element.classList.add("hidden");
   }
 }
 
@@ -71,35 +77,28 @@ function showElement(elementId) {
 }
 
 nextButton.addEventListener("click", function () {
-  // // Hämta värden från inputfälten
-  // const sVal = parseInt(sInput.value) || 0;
-  // const mVal = parseInt(mInput.value) || 0;
-  // const lVal = parseInt(lInput.value) || 0;
-
-  // // Om alla tre är 0 eller tomma => visa popup
-  // if (sVal === 0 && mVal === 0 && lVal === 0) {
-  //   nextButton.disabled = true;
-  //   showElement("popup-container");
-  // } else {
-  //   // Annars, gå vidare till nästa sida
-  //   nextButton.disabled = false;
-  //   hideElement("popup-container");
+  if (!(sEggs || mEggs || lEggs)) {
+    return;
+  }
 
   hideAll();
   showSection("header-id");
   showSection("setTimer-id");
+  currentPage = "setTimer-id";
 });
 
 backButton.addEventListener("click", function () {
   hideAll("setTimer-id");
   showSection("header-id");
   showSection("egg-selection-section");
+  currentPage = "egg-selection-section";
 });
 
 startButton.addEventListener("click", function () {
   hideAll("setTimer-id");
   showSection("header-id");
   showSection("timer-id");
+  currentPage = "timer-id";
 });
 
 smallEggBtn.addEventListener("click", function () {
@@ -155,31 +154,36 @@ function calculateLargeEgg() {
   return lEggs * 8.5;
 }
 
-function clearInput() {
-  sInput.value = "";
-  mInput.value = "";
-  lInput.value = "";
-
-  sEggs = 0;
-  mEggs = 0;
-  lEggs = 0;
-
-  localStorage.removeItem("sEggs");
-  localStorage.removeItem("mEggs");
-  localStorage.removeItem("lEggs");
+function clearInput(eggName) {
+  localStorage.removeItem("s-div");
+  localStorage.removeItem("m-div");
+  localStorage.removeItem("l-div");
 
   hideElement("s-div");
   hideElement("m-div");
   hideElement("l-div");
 }
 
-sDeleteButton.addEventListener("click", clearInput);
-mDeleteButton.addEventListener("click", clearInput);
-lDeleteButton.addEventListener("click", clearInput);
+sDeleteButton.addEventListener("click", function () {
+  sEggs = 0;
+  sInput.value = "";
+  hideInputField("s-div");
+});
+mDeleteButton.addEventListener("click", function () {
+  mEggs = 0;
+  mInput.value = "";
+  hideInputField("m-div");
+});
+lDeleteButton.addEventListener("click", function () {
+  lEggs = 0;
+  lInput.value = "";
+  hideInputField("l-div");
+});
 
 sInput.addEventListener("input", function () {
   sEggs = parseInt(sInput.value);
   localStorage.setItem("sEggs", sInput.value);
+  console.log(sEggs);
 });
 
 mInput.addEventListener("input", function () {
@@ -203,8 +207,6 @@ startButton.addEventListener("click", function () {
 
   proteinAmount.textContent = `${totalsum} g`;
 
-  
-
   let ms = 1000;
   let duration = Number(timerInput.value) * 60;
   timerId = setInterval(function () {
@@ -216,11 +218,17 @@ startButton.addEventListener("click", function () {
     timerTime.textContent = `${minutes} : ${seconds}`;
     duration = duration - 1;
 
+    duration = -1;
     if (duration < 0) {
       hideAll();
       showSection("price-side");
-      showSection("header-id");
-      return
+      setTimeout(function (){
+        showSection("header-id");
+        showSection("finished-section");
+        currentPage = "finished-section";
+
+      }, 1000)
+      return;
     }
   }, ms);
 });
@@ -228,6 +236,19 @@ startButton.addEventListener("click", function () {
 cancelButton.addEventListener("click", function () {
   clearInterval(timerId);
   hideAll();
-  showSection("header-id")
-  showSection("setTimer-id")
+  showSection("header-id");
+  showSection("setTimer-id");
 });
+
+infoButton.addEventListener("click", function (){
+  hideAll()
+  showSection("information-section");
+  showSection("header-id");
+})
+
+
+informationS.addEventListener("click", function (){
+  hideAll();
+  showSection("header-id");
+  showSection(currentPage);
+})
