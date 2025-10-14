@@ -56,9 +56,13 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 110px;
+  gap: 100px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.right-section{
+  margin-right: 10px;
 }
 
 h1 {
@@ -144,6 +148,19 @@ h1 {
   background-position: center;
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
   cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+/* 🔸 Hover-effekt för ALLA ägg */
+.egg-button:hover {
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+  transform: scale(1.05);
+}
+
+/* 🔸 Extra stark effekt när ägget är valt OCH hover */
+.egg-button.egg-selected:hover {
+  filter: drop-shadow(0 12px 25px rgba(9, 0, 0, 0.9));
+  transform: scale(1.1);
 }
 
 #small-egg-button {
@@ -526,9 +543,7 @@ h1 {
   display: none;
 }
 
-.egg-selected{
-  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
-}
+
 .egg-selected:hover{
   filter: drop-shadow(0 10px 20px rgba(9, 0, 0, 0.883));
 }
