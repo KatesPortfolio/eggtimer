@@ -51,7 +51,7 @@ main {
 }
 
 header {
-  height: 80px;
+  height: 90px;
   background-color: var(--header-background);
   display: flex;
   justify-content: flex-end;
