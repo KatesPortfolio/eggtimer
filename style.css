@@ -43,7 +43,7 @@ body {
   justify-content: center;
   margin: 0;
   background-color: var(--background-color);
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 
 main {
@@ -133,11 +133,16 @@ h1 {
   justify-content: center;
   gap: 20px;
 }
+
 .egg-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
+
+
+
+
 
 .egg-button {
   background-image: url(./assets/image/egg.png);
