@@ -59,6 +59,7 @@ header {
   gap: 90px;
   padding-left: 10px;
   padding-right: 10px;
+  width: 430px;
 }
 
 .right-section{
@@ -367,8 +368,8 @@ h1 {
 
 #egg-picture-one,
 #egg-picture-two {
-  width: 100px;
-  height: 100px;
+  width: 124px;
+  height: 124px;
 }
 
 #egg-picture-one {
@@ -384,8 +385,8 @@ h1 {
 }
 
 #egg-picture-big {
-  width: 150px;
-  height: 150px;
+  width: 165px;
+  height: 165px;
   position: absolute;
   left: 140px;
   right: 140px;
