@@ -51,7 +51,7 @@ main {
 }
 
 header {
-  height: 90px;
+  height: 92px;
   background-color: var(--header-background);
   display: flex;
   justify-content: flex-end;
@@ -77,8 +77,8 @@ h1 {
 }
 
 #information-icon {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   background-image: url(./assets/icon/370079_info_information_data_icon.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -91,8 +91,8 @@ h1 {
 }
 
 #egg-logo {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
 }
 
 .welcome-splash {
@@ -241,6 +241,7 @@ h1 {
 
 #choose-egg-size-text {
   margin: 40px;
+  font-size: 20px;
 }
 
 #add-egg-button {
@@ -248,8 +249,8 @@ h1 {
   color: var(--addbutton-textcolor);
   font-family: kodchasan-bold;
   font-size: 18px;
-  width: 200px;
-  height: 60px;
+  width: 220px;
+  height: 64px;
   text-align: center;
   border: none;
   border-radius: 50px;
@@ -319,13 +320,14 @@ h1 {
 }
 
 .number-input {
-  width: 140px;
-  height: 50px;
+  width: 192px;
+  height: 60px;
   margin-top: 0;
   border: 3px solid var(--addbutton-color);
   border-radius: 5px;
   font-family: kodchasan-semibold;
   padding-left: 10px;
+  padding: 16px;
   font-size: 18px;
 }
 
@@ -335,8 +337,8 @@ h1 {
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: center;
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 60px;
   opacity: 0.7;
   border: 1px solid var(--addbutton-color);
   border-radius: 5px;
@@ -591,7 +593,9 @@ h1 {
 }
 
 .egg-selection-container{
-  height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 @keyframes pop-and-fade {
