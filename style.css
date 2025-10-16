@@ -43,11 +43,11 @@ body {
   justify-content: center;
   margin: 0;
   background-color: var(--background-color);
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 main {
-  width: 430px;
+  width: rem(26, 875);
 }
 
 header {
@@ -141,9 +141,6 @@ h1 {
 }
 
 
-
-
-
 .egg-button {
   background-image: url(./assets/image/egg.png);
   background-color: transparent;
@@ -151,7 +148,8 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+  /* filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));*/
+  filter: drop-shadow(0 0.5rem 0.625rem rgba(0, 0, 0, 0.3));
   cursor: pointer;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
