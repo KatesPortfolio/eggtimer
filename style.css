@@ -537,7 +537,7 @@ header {
   border-radius: 50%;
   margin-left: 20px;
   border: 2px solid white;
-  animation: pop-and-stay 1.5s ease-out forwards;
+  animation: pop-and-stay 2s ease-out forwards;
 }
 #good-job-text {
   margin-top: 40px;
