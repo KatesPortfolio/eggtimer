@@ -124,12 +124,12 @@ nextButton2.addEventListener("click", function () {
 //   currentPage = "egg-selection-section";
 // });
 
-// startButton.addEventListener("click", function () {
-//   hideAll("setTimer-id");
-//   showSection("header-id");
-//   showSection("timer-id");
-//   currentPage = "timer-id";
-// });
+startButton.addEventListener("click", function () {
+  hideAll("setTimer-id");
+  showSection("header-id");
+  showSection("timer-id");
+  currentPage = "timer-id";
+});
 
 smallEggBtn.addEventListener("click", function () {
   selectEgg("S");
@@ -215,8 +215,6 @@ sInput.addEventListener("input", function () {
   smallEggCount = parseInt(sInput.value) || 0;
   localStorage.setItem("smallEggCount", sInput.value);
   displayUpdateProtein();
-  // Namnbyte här
-  console.log(smallEggCount);
 });
 
 mInput.addEventListener("input", function () {
@@ -237,19 +235,15 @@ function setTimer(time) {
 
 button1.addEventListener("click", function () {
   setTimer(5);
-  console.log(selectedTime);
 });
 button2.addEventListener("click", function () {
   setTimer(7);
-  console.log(selectedTime);
 });
 button3.addEventListener("click", function () {
   setTimer(9);
-  console.log(selectedTime);
 });
 button4.addEventListener("click", function () {
   setTimer(11);
-  console.log(selectedTime);
 });
 
 let timerId;
@@ -270,9 +264,8 @@ function displayUpdateProtein() {
 }
 
 startButton.addEventListener("click", function () {
-  z;
 
-  proteinAmount.textContent = amountOfProtein();
+  displayUpdateProtein();
 
   let ms = 1000;
   let duration = selectedTime * 60;
@@ -285,7 +278,6 @@ startButton.addEventListener("click", function () {
     timerTime.textContent = `${minutes} : ${seconds}`;
     duration = duration - 1;
 
-    duration = -1;
     if (duration < 0) {
       hideAll();
       showSection("price-side");
