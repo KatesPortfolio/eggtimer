@@ -78,7 +78,7 @@ function showElement(elementId) {
 
 nextButton.addEventListener("click", function () {
   if (!(smallEggCount || mediumEggCount || largeEggCount)) {
-    // Namnbyte här
+    
     return;
   }
 
@@ -141,20 +141,22 @@ function add() {
   }
 }
 
-smallEggBtn.addEventListener("click", add);
+smallEggBtn.addEventListener("click", function () {
+  add();
+});
 mediumEggBtn.addEventListener("click", add);
 largeEggBtn.addEventListener("click", add);
 
 function calculateSmallEgg() {
-  return smallEggCount * 6; // Namnbyte här
+  return smallEggCount * 6;
 }
 
 function calculateMediumEgg() {
-  return mediumEggCount * 7; // Namnbyte här
+  return mediumEggCount * 7; 
 }
 
 function calculateLargeEgg() {
-  return largeEggCount * 8.5; // Namnbyte här
+  return largeEggCount * 8.5; 
 }
 
 function clearInput(eggName) {
@@ -168,47 +170,63 @@ function clearInput(eggName) {
 }
 
 sDeleteButton.addEventListener("click", function () {
-  smallEggCount = 0; // Namnbyte här
+  smallEggCount = 0; 
   sInput.value = "";
   hideInputField("s-div");
 });
 mDeleteButton.addEventListener("click", function () {
-  mediumEggCount = 0; // Namnbyte här
+  mediumEggCount = 0; 
   mInput.value = "";
   hideInputField("m-div");
+
 });
 lDeleteButton.addEventListener("click", function () {
-  largeEggCount = 0; // Namnbyte här
+  largeEggCount = 0; 
   lInput.value = "";
   hideInputField("l-div");
 });
 
 sInput.addEventListener("input", function () {
-  smallEggCount = parseInt(sInput.value); // Namnbyte här
-  localStorage.setItem("smallEggCount", sInput.value); // Namnbyte här
-  console.log(smallEggCount); // Namnbyte här
+  smallEggCount = parseInt(sInput.value) || 0;
+  localStorage.setItem("smallEggCount", sInput.value); 
+  displayUpdateProtein();
+  // Namnbyte här
+  console.log(smallEggCount); 
 });
 
 mInput.addEventListener("input", function () {
-  mediumEggCount = parseInt(mInput.value); // Namnbyte här
-  localStorage.setItem("mediumEggCount", mInput.value); // Namnbyte här
+  mediumEggCount = parseInt(mInput.value) || 0; 
+  localStorage.setItem("mediumEggCount", mInput.value); 
+  displayUpdateProtein();
 });
 
 lInput.addEventListener("input", function () {
-  largeEggCount = parseInt(lInput.value); // Namnbyte här
-  localStorage.setItem("largeEggCount", lInput.value); // Namnbyte här
+  largeEggCount = parseInt(lInput.value) || 0; 
+  localStorage.setItem("largeEggCount", lInput.value);
+  displayUpdateProtein();
 });
 
 let timerId;
 
-startButton.addEventListener("click", function () {
+function amountOfProtein(){
   const totalLarge = calculateLargeEgg();
   const totalMedium = calculateMediumEgg();
   const totalSmall = calculateSmallEgg();
 
   let totalsum = totalSmall + totalMedium + totalLarge;
 
-  proteinAmount.textContent = `${totalsum} g`;
+  return totalsum;
+}
+
+function displayUpdateProtein (){
+  const total = amountOfProtein();
+  proteinAmount.textContent = `${total} g`;
+}
+
+
+startButton.addEventListener("click", function () {
+
+  proteinAmount.textContent = amountOfProtein();
 
   let ms = 1000;
   let duration = Number(timerInput.value) * 60;
