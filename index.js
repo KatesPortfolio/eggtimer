@@ -280,8 +280,10 @@ startButton.addEventListener("click", function () {
 
     if (duration < 0) {
       hideAll();
+      showSection("header-id");
       showSection("price-side");
       setTimeout(function () {
+        hideAll()
         showSection("header-id");
         showSection("finished-section");
         currentPage = "finished-section";
