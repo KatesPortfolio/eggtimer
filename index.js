@@ -5,7 +5,8 @@ const smallEggBtn = document.getElementById("small-egg-button");
 const mediumEggBtn = document.getElementById("medium-egg-button");
 const largeEggBtn = document.getElementById("large-egg-button");
 const nextButton = document.getElementById("next-button");
-const backButton = document.getElementById("back-button");
+const nextButton2 = document.getElementById("next-button-2");
+const backButton2 = document.getElementById("back-button-2");
 const startButton = document.getElementById("start-button");
 const addEggButton = document.getElementById("add-egg-button");
 const cancelButton = document.getElementById("cancel-button");
@@ -22,12 +23,19 @@ const timerInput = document.getElementById("timer-input");
 const proteinAmount = document.getElementById("protein-amount");
 const infoButton = document.getElementById("information-icon");
 const informationS = document.getElementById("information-section");
+const popup = document.getElementById("popup");
+const popupCloseButton = document.getElementById("popup-close-button");
+const button1 = document.getElementById("cooking-time-5");
+const button2 = document.getElementById("cooking-time-7");
+const button3 = document.getElementById("cooking-time-9");
+const button4 = document.getElementById("cooking-time-11");
 let currentPage;
 
 let selectedEgg = null;
-let smallEggCount = 0; // Namnbyte här
-let mediumEggCount = 0; // Namnbyte här
-let largeEggCount = 0; // Namnbyte här
+let selectedTime = 0;
+let smallEggCount = 0;
+let mediumEggCount = 0;
+let largeEggCount = 0;
 
 window.addEventListener("load", function () {
   hideAll();
@@ -78,38 +86,62 @@ function showElement(elementId) {
 
 nextButton.addEventListener("click", function () {
   if (!(smallEggCount || mediumEggCount || largeEggCount)) {
-    
+    popup.classList.remove("hidden");
     return;
   }
 
   hideAll();
+  hideElement();
   showSection("header-id");
   showSection("setTimer-id");
   currentPage = "setTimer-id";
 });
 
-backButton.addEventListener("click", function () {
-  hideAll("setTimer-id");
-  showSection("header-id");
-  showSection("egg-selection-section");
-  currentPage = "egg-selection-section";
+popupCloseButton.addEventListener("click", function () {
+  popup.classList.add("hidden");
 });
 
-startButton.addEventListener("click", function () {
-  hideAll("setTimer-id");
+backButton2.addEventListener("click", function () {
+  hideAll();
+  showSection("egg-selection-section");
   showSection("header-id");
-  showSection("timer-id");
-  currentPage = "timer-id";
 });
+
+nextButton2.addEventListener("click", function () {
+  if(!(selectedTime)){
+    return;
+  }
+
+  hideAll();
+  showSection("timer-start");
+  showSection("header-id");
+});
+
+// backButton.addEventListener("click", function () {
+//   hideAll("setTimer-id");
+//   showSection("header-id");
+//   showSection("egg-selection-section");
+//   currentPage = "egg-selection-section";
+// });
+
+// startButton.addEventListener("click", function () {
+//   hideAll("setTimer-id");
+//   showSection("header-id");
+//   showSection("timer-id");
+//   currentPage = "timer-id";
+// });
 
 smallEggBtn.addEventListener("click", function () {
   selectEgg("S");
+  add();
 });
 mediumEggBtn.addEventListener("click", function () {
   selectEgg("M");
+  add();
 });
 largeEggBtn.addEventListener("click", function () {
   selectEgg("L");
+  add();
 });
 
 function selectEgg(size) {
@@ -141,22 +173,16 @@ function add() {
   }
 }
 
-smallEggBtn.addEventListener("click", function () {
-  add();
-});
-mediumEggBtn.addEventListener("click", add);
-largeEggBtn.addEventListener("click", add);
-
 function calculateSmallEgg() {
   return smallEggCount * 6;
 }
 
 function calculateMediumEgg() {
-  return mediumEggCount * 7; 
+  return mediumEggCount * 7;
 }
 
 function calculateLargeEgg() {
-  return largeEggCount * 8.5; 
+  return largeEggCount * 8.5;
 }
 
 function clearInput(eggName) {
@@ -170,45 +196,65 @@ function clearInput(eggName) {
 }
 
 sDeleteButton.addEventListener("click", function () {
-  smallEggCount = 0; 
+  smallEggCount = 0;
   sInput.value = "";
   hideInputField("s-div");
 });
 mDeleteButton.addEventListener("click", function () {
-  mediumEggCount = 0; 
+  mediumEggCount = 0;
   mInput.value = "";
   hideInputField("m-div");
-
 });
 lDeleteButton.addEventListener("click", function () {
-  largeEggCount = 0; 
+  largeEggCount = 0;
   lInput.value = "";
   hideInputField("l-div");
 });
 
 sInput.addEventListener("input", function () {
-  smallEggCount = parseInt(sInput.value) || 0;
-  localStorage.setItem("smallEggCount", sInput.value); 
+  smallEggCount = parseInt(sInput.value) || 0;
+  localStorage.setItem("smallEggCount", sInput.value);
   displayUpdateProtein();
   // Namnbyte här
-  console.log(smallEggCount); 
+  console.log(smallEggCount);
 });
 
 mInput.addEventListener("input", function () {
-  mediumEggCount = parseInt(mInput.value) || 0; 
-  localStorage.setItem("mediumEggCount", mInput.value); 
+  mediumEggCount = parseInt(mInput.value) || 0;
+  localStorage.setItem("mediumEggCount", mInput.value);
   displayUpdateProtein();
 });
 
 lInput.addEventListener("input", function () {
-  largeEggCount = parseInt(lInput.value) || 0; 
+  largeEggCount = parseInt(lInput.value) || 0;
   localStorage.setItem("largeEggCount", lInput.value);
   displayUpdateProtein();
 });
 
+function setTimer(time) {
+  selectedTime = time;
+}
+
+button1.addEventListener("click", function () {
+  setTimer(5);
+  console.log(selectedTime);
+});
+button2.addEventListener("click", function () {
+  setTimer(7);
+  console.log(selectedTime);
+});
+button3.addEventListener("click", function () {
+  setTimer(9);
+  console.log(selectedTime);
+});
+button4.addEventListener("click", function () {
+  setTimer(11);
+  console.log(selectedTime);
+});
+
 let timerId;
 
-function amountOfProtein(){
+function amountOfProtein() {
   const totalLarge = calculateLargeEgg();
   const totalMedium = calculateMediumEgg();
   const totalSmall = calculateSmallEgg();
@@ -218,18 +264,18 @@ function amountOfProtein(){
   return totalsum;
 }
 
-function displayUpdateProtein (){
+function displayUpdateProtein() {
   const total = amountOfProtein();
   proteinAmount.textContent = `${total} g`;
 }
 
-
 startButton.addEventListener("click", function () {
+  z;
 
   proteinAmount.textContent = amountOfProtein();
 
   let ms = 1000;
-  let duration = Number(timerInput.value) * 60;
+  let duration = selectedTime * 60;
   timerId = setInterval(function () {
     if (duration <= 0) {
       clearInterval(timerId);

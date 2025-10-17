@@ -9,7 +9,7 @@
   </head>
   <body>
     <main>
-      <header class="section" id="header-id">
+      <header class="section hidden" id="header-id">
         <div class="middle-section">
           <img id="egg-logo" src="./assets/image/egg.png" />
           <h1 id="logo-text">PROTÉINITY</h1>
@@ -18,6 +18,7 @@
           <button id="information-icon"></button>
         </div>
       </header>
+
       <div class="section welcome-splash" id="welcome-splash">
         <div class="upper-wrapper">
           <img id="egg-image-logo" src="./assets/image/egg.png" />
@@ -27,7 +28,11 @@
           <p id="sponsored">SPONSORED BY GYMGROSSISTEN</p>
         </div>
       </div>
-      <div class="section egg-selection-section" id="egg-selection-section">
+
+      <div
+        class="section egg-selection-section hidden"
+        id="egg-selection-section"
+      >
         <h1 id="choose-egg-size-text">Välj äggstorlek</h1>
         <div class="egg-wrapper">
           <div class="first-div">
@@ -43,48 +48,133 @@
             <button id="large-egg-button" class="egg-button"></button>
           </div>
         </div>
-        </div>
+
         <div class="egg-selection-container">
-          <div id="s-div" class="s-section element">
+          <div id="s-div" class="s-section element hidden">
             <p id="S">S:</p>
-            <input type="text" class="number-input" id="input-number-s" placeholder="ANTAL ÄGG" />
-            <button id="s-delete"  class="delete-button"></button>
+            <input
+              type="text"
+              class="number-input"
+              id="input-number-s"
+              placeholder="ANTAL ÄGG"
+            />
+            <button id="s-delete" class="delete-button"></button>
           </div>
-          <div id="m-div"  class="m-section element">
+          <div id="m-div" class="m-section element hidden">
             <p id="M">M:</p>
-            <input type="text" class="number-input" id="input-number-m"  placeholder="ANTAL ÄGG" />
-            <button id="m-delete"  class="delete-button"></button>
+            <input
+              type="text"
+              class="number-input"
+              id="input-number-m"
+              placeholder="ANTAL ÄGG"
+            />
+            <button id="m-delete" class="delete-button"></button>
           </div>
-          <div id="l-div" class="l-section element">
+          <div id="l-div" class="l-section element hidden">
             <p id="L">L:</p>
-            <input type="text" class="number-input" id="input-number-l"  placeholder="ANTAL ÄGG" />
-            <button id="l-delete"  class="delete-button"></button>
+            <input
+              type="text"
+              class="number-input"
+              id="input-number-l"
+              placeholder="ANTAL ÄGG"
+            />
+            <button id="l-delete" class="delete-button"></button>
           </div>
         </div>
-        <p id="todaysProtein">Dagens Protein: <span id="protein-amount"></span></p>
-        <div id="popup">
-          <img id="delete-icon"src="./assets/icon/8155520_close_delete_remove_cancel_trash_icon.png">
-          <div id="popup-section">
-            <p id="popup-text">Glöm inte välja antal ägg</p>
-            <img id="egg-icon-popup" src="./assets/image/egg.png">
-            <p id="popup-text">Skriv antalet i rutan</p>
+
+        <p id="todaysProtein">
+          Totala Protein: <span id="protein-amount"></span>
+        </p>
+
+        <div id="popup" class="hidden popup-container">
+          <div id="popup-content">
+            <button id="popup-close-button" class="close-button"></button>
+            <div id="popup-section">
+              <p id="popup-text">Glöm inte välja antal ägg</p>
+              <img id="egg-icon-popup" src="./assets/image/egg.png" />
+              <p id="popup-text">Skriv antalet i rutan</p>
+            </div>
           </div>
         </div>
-        <button id="next-button"></button>
+
+        <button class="button" id="next-button"></button>
       </div>
-      <div class="section timer-section" id="setTimer-id">
+      <div class="section timer-section hidden" id="setTimer-id">
+        <p id="choose-cookingtime">Välj koktid</p>
+        <div class="cooking-section">
+          <div class="card" id="cooking-time-5">
+            <div class="image-button" id="picture-1-button">
+              <img
+                id="picture-1"
+                src="./assets/image/egg (kopia).png"
+                alt="Löst kokt ägg"
+                class="cooking-image"
+              />
+            </div>
+            <div class="bottom-section">
+              <p class="boild">LÖSTKOKT</p>
+              <p class="time">5 min</p>
+            </div>
+          </div>
+          <div class="card" id="cooking-time-7">
+            <divclass="image-button" id="picture-2-button">
+              <img
+                id="picture-2"
+                src="./assets/image/boiled-egg (kopia).png"
+                alt="Mjukkokt ägg"
+                class="cooking-image"
+              />
+            </divclass=>
+            <div class="bottom-section">
+              <p class="boild">MJUKKOKT</p>
+              <p class="time">7 min</p>
+            </div>
+          </div>
+          <div class="card" id="cooking-time-9">
+            <div class="image-button" id="picture-3-button">
+              <img
+                id="picture-3"
+                src="./assets/image/boiled-egg.png"
+                alt="Mediumkokt ägg"
+                class="cooking-image"
+              />
+            </div>
+            <div class="bottom-section">
+              <p class="boild">MEDIUMKOKT</p>
+              <p class="time">9 min</p>
+            </div>
+          </div>
+          <div class="card" id="cooking-time-11">
+            <div class="image-button" id="picture-4-button">
+              <img
+                id="picture-4"
+                src="./assets/image/8081751_egg_icon.png"
+                alt="Hårdkokt ägg"
+                class="cooking-image"
+              />
+            </div>
+            <div class="bottom-section">
+              <p class="boild">HÅRDKOKT</p>
+              <p class="time">11 min</p>
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button id="back-button-2"></button>
+          <button id="next-button-2"></button>
+        </div>
+      </div>
+
+      <div class="section timer-start hidden" id="timer-start">
         <div class="egg-picture">
           <img id="egg-picture-one" src="./assets/image/egg.png" />
           <img id="egg-picture-big" src="./assets/image/egg.png" />
           <img id="egg-picture-two" src="./assets/image/egg.png" />
         </div>
-        <p id="timer">TIMER</p>
-        <input type="text" id="timer-input" placeholder="LÄGG IN TID" />
         <button id="start-button">Start</button>
-        <button id="back-button"></button>
-
       </div>
-      <div class="section finished-popup" id="timer-id">
+
+      <div class="section finished-popup hidden" id="timer-id">
         <div class="egg-picture">
           <img id="egg-picture-one" src="./assets/image/egg.png" />
           <img id="egg-picture-big" src="./assets/image/egg.png" />
@@ -94,13 +184,15 @@
         <div id="timer-time"></div>
         <button id="cancel-button">Avsluta</button>
       </div>
-      <div class="section price-section" id="price-side">
+
+      <div class="section price-section hidden" id="price-side">
         <img
           id="price-image"
           src="./assets/image/186270_verified_quality_award_guaranteed_guarantee_icon.png"
         />
       </div>
-      <div class="section finished-section" id="finished-section">
+
+      <div class="section finished-section hidden" id="finished-section">
         <img
           id="final-image"
           src="./assets/image/ChatGPT Image 11 okt. 2025 13_21_51.png"
@@ -108,7 +200,8 @@
         <h3 id="good-job-text">BRA JOBBAT!</h3>
         <p id="enjoy-text">Servera direkt och njut av smaken!</p>
       </div>
-      <div class="section information-section" id="information-section">
+
+      <div class="section information-section hidden" id="information-section">
         <div class="information-wrapper">
           <h3 class="title-information">INFORMATION</h3>
           <p class="information-text">

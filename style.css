@@ -66,7 +66,7 @@ header {
   width: 430px;
 }
 
-.right-section{
+.right-section {
   margin-right: 10px;
 }
 
@@ -142,7 +142,6 @@ header {
   align-items: flex-end;
 }
 
-
 .egg-button {
   background-image: url(./assets/image/egg.png);
   background-color: transparent;
@@ -181,26 +180,22 @@ header {
   height: 160px;
 }
 
-#next-button {
+#next-button,
+#next-button-2 {
   background-image: url(./assets/icon/1814086_arrow_forward_next_right_icon.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+
   width: 85px;
   height: 50px;
   background-color: var(--buttons-color);
   border: none;
   border-radius: 10px;
-  margin-left: 300px;
 }
 
-/* #next-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  filter: grayscale(100%);
-} */
-
-#back-button {
+#back-button,
+#back-button-2 {
   background-image: url(./assets/icon/1814084_arrow_back_left_previous_icon.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -209,19 +204,103 @@ header {
   height: 50px;
   background-color: var(--buttons-color);
   border: none;
-  border-radius: 10px;
-  margin-left: 50px;
-  margin-top: 120px;
+  border-radius: 10px;  
+}
+
+#next-button-2{
+  margin-left: 150px;
+  margin-top: 58px;
+}
+
+#next-button{
+  margin-left: 280px;
 }
 
 
-#choose-egg-size-text {
+#choose-egg-size-text,
+#choose-cookingtime {
   margin-top: 44px;
   margin-bottom: 32px;
   font-size: 28px;
   text-align: center;
   font-family: inter-medium;
   letter-spacing: 1px;
+}
+
+.cooking-section {
+  display: grid;
+  grid-template-columns: repeat(2, 168px);
+  gap: 24px;
+}
+
+.image-button{
+  background: none; /* Ingen bakgrundsfärg */
+  border: none; /* Ingen kantlinje */
+  padding: 0; /* VIKTIGT: Tar bort standard inre utrymme (padding) från knappen */
+  margin: 0; /* Tar bort eventuell marginal från knappen */
+  cursor: pointer; /* Behåller pekaren för klick */
+  
+  /* Låter knappen ta upp det utrymme som bilden behöver */
+  display: flex; /* Använd flex för att centrera bilden inuti knappen */
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Låt knappen fylla den övre delen av .card */
+  flex-grow: 1; /* Låt knappen expandera för att rymma bilden */
+}
+
+.card {
+  width: 168px;
+  height: 242px;
+  border-radius: 8px;
+  background-color: var(--buttons-color);
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-selected{
+  transform: scale(1.2) ;
+}
+
+.boild {
+  font-family: kodchasan-medium;
+  color: white;
+  font-size: 16px;
+}
+
+.bottom-section {
+  background-color: var(--instructions-textcolor);
+  border-radius: 0px 0px 8px 8px;
+  padding: 10px;
+}
+
+.bottom-section p {
+  margin: 4px 0; /* För att minska utrymmet mellan textraderna */
+}
+
+#picture-1,
+#picture-2,
+#picture-3,
+#picture-4 {
+  width: 84px;
+  height: 84px;
+  flex-grow: 1;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+
+.time {
+  font-family: inter-medium;
+  font-size: 12px;
+  color: white;
 }
 
 .egg-wrapper div {
@@ -231,11 +310,10 @@ header {
   align-items: center;
 }
 
-#logo-text{
+#logo-text {
   font-family: kodchasan-semibold;
   font-size: 24px;
 }
-
 
 #S-size,
 #M-size,
@@ -284,7 +362,7 @@ header {
   box-sizing: border-box;
 }
 
-.delete-button:hover{
+.delete-button:hover {
   background-color: var(--instructions-textcolor);
 }
 
@@ -324,9 +402,10 @@ header {
 }
 
 .timer-section {
-  margin-top: 74px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .egg-picture {
@@ -402,12 +481,13 @@ header {
   margin-top: 74px;
 }
 
-.finished-section{
+.finished-section {
   margin-top: 0;
 }
 
 #protein-text,
-#protein-amount, #todaysProtein {
+#protein-amount,
+#todaysProtein {
   font-family: inter-medium;
   font-size: 28px;
   margin-top: 200px;
@@ -415,7 +495,7 @@ header {
   letter-spacing: 1px;
 }
 
-#todaysProtein{
+#todaysProtein {
   margin-top: 48px;
 }
 
@@ -497,7 +577,6 @@ header {
   height: 612px;
   margin-left: 10px;
 
-
   position: relative;
   top: 0;
   right: 0;
@@ -565,47 +644,58 @@ header {
   font-size: 16px;
 }
 
-.hidden {
-  display: none;
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center; /* Centrerar horisontellt */
+  align-items: center;
 }
 
-
-.egg-selected:hover{
-  filter: drop-shadow(0 10px 20px rgba(9, 0, 0, 0.883));
-}
-
-#popup{
-  width: 294px;
-  height: 304px;
-  border-radius: 8px;
-  background-color: var(--instructions-background);
-  padding: 8px;
-
+#popup-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  position: absolute;
-  top: 0;
-  left:0;
-  right: 0;
-  bottom: 0;
+  width: 294px;
+  height: 304px;
+  border-radius: 8px;
+  background-color: var(--instructions-background);
+  padding: 8px;
 }
 
-#delete-icon{
+#popup-close-button {
   width: 24px;
   height: 24px;
   margin-left: 240px;
+  background-image: url(./assets/icon/8155520_close_delete_remove_cancel_trash_icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: var(--instructions-background);
 }
 
-#egg-icon-popup{
+.egg-selected:hover {
+  filter: drop-shadow(0 10px 20px rgba(9, 0, 0, 0.883));
+}
+
+
+
+#egg-icon-popup {
   width: 44px;
   height: 44px;
   margin-left: 128px;
 }
 
-#popup-text{
+#popup-text {
   font-family: kodchasan-semibold;
   font-size: 24px;
   text-align: center;
@@ -647,4 +737,8 @@ header {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.hidden {
+  display: none;
 }
