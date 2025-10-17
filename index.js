@@ -25,9 +25,9 @@ const informationS = document.getElementById("information-section");
 let currentPage;
 
 let selectedEgg = null;
-let sEggs = 0;
-let mEggs = 0;
-let lEggs = 0;
+let smallEggCount = 0; // Namnbyte här
+let mediumEggCount = 0; // Namnbyte här
+let largeEggCount = 0; // Namnbyte här
 
 window.addEventListener("load", function () {
   hideAll();
@@ -77,7 +77,8 @@ function showElement(elementId) {
 }
 
 nextButton.addEventListener("click", function () {
-  if (!(sEggs || mEggs || lEggs)) {
+  if (!(smallEggCount || mediumEggCount || largeEggCount)) {
+    // Namnbyte här
     return;
   }
 
@@ -140,18 +141,20 @@ function add() {
   }
 }
 
-addEggButton.addEventListener("click", add);
+smallEggBtn.addEventListener("click", add);
+mediumEggBtn.addEventListener("click", add);
+largeEggBtn.addEventListener("click", add);
 
 function calculateSmallEgg() {
-  return sEggs * 6;
+  return smallEggCount * 6; // Namnbyte här
 }
 
 function calculateMediumEgg() {
-  return mEggs * 7;
+  return mediumEggCount * 7; // Namnbyte här
 }
 
 function calculateLargeEgg() {
-  return lEggs * 8.5;
+  return largeEggCount * 8.5; // Namnbyte här
 }
 
 function clearInput(eggName) {
@@ -165,35 +168,35 @@ function clearInput(eggName) {
 }
 
 sDeleteButton.addEventListener("click", function () {
-  sEggs = 0;
+  smallEggCount = 0; // Namnbyte här
   sInput.value = "";
   hideInputField("s-div");
 });
 mDeleteButton.addEventListener("click", function () {
-  mEggs = 0;
+  mediumEggCount = 0; // Namnbyte här
   mInput.value = "";
   hideInputField("m-div");
 });
 lDeleteButton.addEventListener("click", function () {
-  lEggs = 0;
+  largeEggCount = 0; // Namnbyte här
   lInput.value = "";
   hideInputField("l-div");
 });
 
 sInput.addEventListener("input", function () {
-  sEggs = parseInt(sInput.value);
-  localStorage.setItem("sEggs", sInput.value);
-  console.log(sEggs);
+  smallEggCount = parseInt(sInput.value); // Namnbyte här
+  localStorage.setItem("smallEggCount", sInput.value); // Namnbyte här
+  console.log(smallEggCount); // Namnbyte här
 });
 
 mInput.addEventListener("input", function () {
-  mEggs = parseInt(mInput.value);
-  localStorage.setItem("mEggs", mInput.value);
+  mediumEggCount = parseInt(mInput.value); // Namnbyte här
+  localStorage.setItem("mediumEggCount", mInput.value); // Namnbyte här
 });
 
 lInput.addEventListener("input", function () {
-  lEggs = parseInt(lInput.value);
-  localStorage.setItem("lEggs", lInput.value);
+  largeEggCount = parseInt(lInput.value); // Namnbyte här
+  localStorage.setItem("largeEggCount", lInput.value); // Namnbyte här
 });
 
 let timerId;
@@ -222,12 +225,11 @@ startButton.addEventListener("click", function () {
     if (duration < 0) {
       hideAll();
       showSection("price-side");
-      setTimeout(function (){
+      setTimeout(function () {
         showSection("header-id");
         showSection("finished-section");
         currentPage = "finished-section";
-
-      }, 1000)
+      }, 1000);
       return;
     }
   }, ms);
@@ -240,15 +242,14 @@ cancelButton.addEventListener("click", function () {
   showSection("setTimer-id");
 });
 
-infoButton.addEventListener("click", function (){
-  hideAll()
+infoButton.addEventListener("click", function () {
+  hideAll();
   showSection("information-section");
   showSection("header-id");
-})
+});
 
-
-informationS.addEventListener("click", function (){
+informationS.addEventListener("click", function () {
   hideAll();
   showSection("header-id");
   showSection(currentPage);
-})
+});

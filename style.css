@@ -33,10 +33,14 @@
   src: url(./assets/font/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf);
 }
 
-/* @font-face {
-  font-family: inter;
-  src: url(./assets/font/Inter/Inter-VariableFont_opsz\wght.ttf);
-} */
+@font-face {
+  font-family: inter-semibold;
+  src: url(./assets/font/Inter/static/Inter_18pt-SemiBold.ttf);
+}
+@font-face {
+  font-family: inter-medium;
+  src: url(./assets/font/Inter/static/Inter_28pt-Medium.ttf);
+}
 
 body {
   display: flex;
@@ -51,7 +55,7 @@ main {
 }
 
 header {
-  height: 92px;
+  height: 104px;
   background-color: var(--header-background);
   display: flex;
   justify-content: flex-end;
@@ -64,11 +68,6 @@ header {
 
 .right-section{
   margin-right: 10px;
-}
-
-h1 {
-  font-family: kodchasan-semibold;
-  font-size: 20px;
 }
 
 .middle-section {
@@ -241,29 +240,12 @@ h1 {
 }
 
 #choose-egg-size-text {
-  margin: 40px;
-  font-size: 20px;
-}
-
-#add-egg-button {
-  background-color: var(--addbutton-color);
-  color: var(--addbutton-textcolor);
-  font-family: kodchasan-bold;
-  font-size: 18px;
-  width: 220px;
-  height: 64px;
+  margin-top: 44px;
+  margin-bottom: 32px;
+  font-size: 28px;
   text-align: center;
-  border: none;
-  border-radius: 50px;
-  margin-left: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-family: inter-medium;
 }
-
-#add-egg-button:hover{
-  background-color: var(--instructions-textcolor);
-}
-
 
 .egg-wrapper div {
   position: relative;
@@ -271,6 +253,12 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+#logo-text{
+  font-family: kodchasan-semibold;
+  font-size: 24px;
+}
+
 
 #S-size,
 #M-size,
@@ -298,7 +286,9 @@ h1 {
 
 .egg-selection-container {
   display: block;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
 }
 
 .s-section,
@@ -307,8 +297,8 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  gap: 12px;
 }
 
 .number-input,
@@ -395,7 +385,7 @@ h1 {
 
 #timer {
   margin-top: 200px;
-  font-size: inter;
+  font-size: inter-semibold;
   font-size: 30px;
   text-align: center;
   letter-spacing: 1.5px;
@@ -415,7 +405,7 @@ h1 {
 
 #start-button {
   font-size: 24px;
-  font-family: inter;
+  font-family: inter-semibold;
   border-radius: 50px;
   background-color: var(--startbutton-color);
   color: var(--startendbutton-textcolor);
@@ -439,12 +429,16 @@ h1 {
 }
 
 #protein-text,
-#protein-amount {
-  font-family: inter;
-  font-size: 26px;
+#protein-amount, #todaysProtein {
+  font-family: inter-semibold;
+  font-size: 28px;
   margin-top: 200px;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+#todaysProtein{
+  margin-top: 48px;
 }
 
 #timer-time {
@@ -466,7 +460,7 @@ h1 {
 
 #cancel-button {
   font-size: 24px;
-  font-family: inter;
+  font-family: inter-semibold;
   border-radius: 50px;
   background-color: var(--endbutton-color);
   color: var(--startendbutton-textcolor);
@@ -602,11 +596,7 @@ h1 {
   filter: drop-shadow(0 10px 20px rgba(9, 0, 0, 0.883));
 }
 
-.egg-selection-container{
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
+
 
 @keyframes pop-and-fade {
   0% {
